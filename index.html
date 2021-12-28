@@ -1,10 +1,56 @@
 <html>
 <head>
    <title>Hello React</title>
+   <style>
+      @charset "utf-8";
+
+      #box {
+      width:200px;
+      height:200px;
+      background-color:aqua;
+      border:5px solid #000;
+      transform:rotate(0deg);
+      }
+   </style>
    <script defer src="./javascript/start.js"></script>
    <script defer src="./javascript/variable.js"></script>
+   <script defer src="./javascript/selector.js"></script>
+   <script defer src="./javascript/css.js"></script>
 </head>
 <body>
-   <h1>Live Server Test</h1>
+   <main>
+      <section id="sect">
+         <article class="art1">
+            <ul class="list">
+               <li class="item1">
+                  <a href="#">item 1</a>
+                  <ul>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                  </ul>
+               </li>
+               <li class="item2">item 2</li>
+               <li class="item3">item 3</li>
+               <li class="item4">last item</li>
+            </ul>
+         </article>
+         <article id="box" class="art2">
+            <ul class="list">
+               <li class="item1">
+                  <a href="#">item 1</a>
+                  <ul>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                  </ul>
+               </li>
+               <li class="item2">item 2</li>
+               <li class="item3">item 3</li>
+               <li class="item4">last item</li>
+            </ul>
+         </article>
+      </section>
+   </main>
 </body>
 </html>
