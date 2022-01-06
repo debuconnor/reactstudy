@@ -1,22 +1,29 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 function App() {
-  const [text, setText] = useState('')
+  const [names, setNames] = useState({
+    username: '',
+    nickname: ''
+  });
+
+  const { username, nickname } = names;
+  const inputRef = useRef();
 
   const onChange = (e) => {
-    setText(e.target.value);
-  }
-
-  const clearText = (e) =>{
-    setText('')
+    const {value, name} = e.target;
+    console.log(name, value);
+    setNames({
+      ...names, [name]:value
+    });
   }
 
   return (
     <div className='App'>
-      <input onChange={onChange} value={text} />
-      <button onClick={clearText}>clear</button>
-      <div>val: {text}</div>
+      <input name="username" placeholder="username" onChange={onChange} value={username} ref={inputRef} />
+      <input name="nickname" placeholder="nickname" onChange={onChange} value={nickname} />
+
+      <div>{username} ({nickname})</div>
     </div>
   )
 }
