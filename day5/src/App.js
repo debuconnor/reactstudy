@@ -1,11 +1,9 @@
-import Parent1 from "./Parent1";
-import Ref1 from "./Ref1";
+import Parents from "./Parents";
 
 function App() {
   return(
     <div>
-      {/* <Ref1 /> */}
-      <Parent1 />
+      <Parents />
     </div>
   )
 }
