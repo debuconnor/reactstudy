@@ -34,6 +34,8 @@ function App() {
   ]);
 
   const nextId = useRef(4);
+  const usernameRef = useRef();
+
   const onCreate = () => {
     const user = {
       id: nextId.current,
@@ -47,6 +49,7 @@ function App() {
       email: ''
     });
     nextId.current += 1;
+    usernameRef.current.focus();
   };
   
   return (
@@ -56,6 +59,7 @@ function App() {
         email={email}
         onChange={onChange}
         onCreate={onCreate}
+        usernameRef={usernameRef}
       />
       <UserList users={users} />
     </>

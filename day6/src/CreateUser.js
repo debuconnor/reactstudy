@@ -1,6 +1,6 @@
 import React from "react";
 
-function CreateUser({ username, email, onChange, onCreate }) {
+function CreateUser({ username, email, usernameRef, onChange, onCreate }) {
     return (
         <div>
             <input
@@ -8,6 +8,7 @@ function CreateUser({ username, email, onChange, onCreate }) {
                 placeholder="username"
                 onChange={onChange}
                 value={username}
+                ref={usernameRef}
             />
             <input
                 name="email"
