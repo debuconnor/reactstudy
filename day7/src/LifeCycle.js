@@ -11,22 +11,52 @@ function LifeCycle(){
 }
 
 function FuncComp(props){
-    const [number, setNumber] = useState(1);
+    const [number, setNumber] = useState(props.initNumber);
+    const [date, setDate] = useState(new Date().toString())
 
+    const setRandom = () => {
+        setNumber(Math.floor(Math.random() * 10));
+    }
+
+    const showDate = () => {
+        setDate(new Date().toString())
+    }
+    
     return(
         <div className="container">
             <h2>Function Component</h2>
-            <p>Number: {props.initNumber} </p>
+            <p>Number: {number} </p>
+            <p>Date: {date}</p>
+            <button onClick={setRandom}>Random</button>
+            <button onClick={() => {showDate(); setRandom();}}>Refresh</button>
         </div>
     )
 }
 
 class ClassComp extends React.Component{
+    state={
+        number: this.props.initNumber,
+        date: (new Date()).toString()
+    }
+    
     render(){
         return(
             <div className="container">
                 <h2>Class Component</h2>
-            <p>Number: {this.props.initNumber} </p>
+            <p>Number: {this.state.number} </p>
+            <p>Date: {this.state.date} </p>
+            <p>test: {this.test.a}</p>
+            <button onClick={function(){
+                this.setState({
+                    number:Math.floor(Math.random() * 10)
+                    })
+                }.bind(this)}>Random</button>
+            <button onClick={function(){
+                this.setState({
+                    number:Math.floor(Math.random() * 10),
+                    date: (new Date()).toString()
+                })
+            }.bind(this)}>Refresh</button>
             </div>
         )
     }
