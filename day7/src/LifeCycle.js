@@ -12,7 +12,7 @@ function LifeCycle(){
 
 function FuncComp(props){
     const [number, setNumber] = useState(props.initNumber);
-    const [date, setDate] = useState(new Date().toString())
+    const [date, setDate] = useState(new Date().toString());
 
     const setRandom = () => {
         setNumber(Math.floor(Math.random() * 10));
@@ -40,6 +40,31 @@ class ClassComp extends React.Component{
             number: this.props.initNumber,
             date: (new Date()).toString()
         }
+    }
+
+    componentWillMount(){
+        console.log('componentWillMount called.');
+    }
+
+    componentDidMount(){
+        console.log('componentDidMount called.');
+    }
+
+    shouldComponentUpdate(nextPros, nextState){
+        console.log('componentDidMount called.')
+        return true;
+    }
+
+    componentWillUpdate(nextPros, nextState){
+        console.log('componentWillUpdate called.')
+    }
+
+    componentDidUpdate(nextPros, nextState){
+        console.log('componentDidUpdate called.')
+    }
+
+    componentWillUnmount(){
+        console.log('componentWillUnmount called.')
     }
     
     render(){
