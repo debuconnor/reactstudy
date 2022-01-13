@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function LifeCycle(){
+    const [funcCompFlag, setFuncCompFlag] = useState(true);
+    const [classCompFlag, setClassCompFlag] = useState(true);
+
     return(
         <div className="container">
             <h1>React LifeCycle</h1>
-            <FuncComp initNumber={1} />
-            <ClassComp initNumber={2} />
+            <button onClick={()=>{setFuncCompFlag(!funcCompFlag)}}>Function Component</button>
+            <button onClick={()=>{setClassCompFlag(!classCompFlag)}}>Class Component</button>
+            
+            {funcCompFlag ? <FuncComp initNumber={1} /> : null}
+            {classCompFlag ? <ClassComp initNumber={2} /> : null}
         </div>
     )
 }
+
+let red = 'color:red';
 
 function FuncComp(props){
     const [number, setNumber] = useState(props.initNumber);
@@ -21,6 +29,19 @@ function FuncComp(props){
     const showDate = () => {
         setDate(new Date().toString())
     }
+
+    useEffect(() => {
+        console.log('%c called in useEffect', red)
+        return () => {}
+    }, [])
+
+    useEffect(() => {
+        console.log('%c Number[componentDidMount, componentDidUpdate]', red)
+    }, [number])
+
+    useEffect(() => {
+        console.log('%c Date[componentDidMount, componentDidUpdate]', red)
+    }, [date])
     
     return(
         <div className="container">
