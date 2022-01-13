@@ -34,9 +34,12 @@ function FuncComp(props){
 }
 
 class ClassComp extends React.Component{
-    state={
-        number: this.props.initNumber,
-        date: (new Date()).toString()
+    constructor(props){
+        super(props);
+        this.state={
+            number: this.props.initNumber,
+            date: (new Date()).toString()
+        }
     }
     
     render(){
@@ -45,7 +48,6 @@ class ClassComp extends React.Component{
                 <h2>Class Component</h2>
             <p>Number: {this.state.number} </p>
             <p>Date: {this.state.date} </p>
-            <p>test: {this.test.a}</p>
             <button onClick={function(){
                 this.setState({
                     number:Math.floor(Math.random() * 10)
