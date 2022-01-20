@@ -1,10 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-function Graphics() {
+function Graphics(props) {
+    const subject = useParams;
+    console.log(subject)
     return (
         <div>
             <h2>Graphic Work</h2>
-            <hr/>
+            <hr />
         </div>
     )
 }
