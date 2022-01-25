@@ -1,14 +1,11 @@
 import './App.css'
 import React from 'react'
-import UseStateHook from './UseStateHook'
-import UseReducerHook from './UseReducerHook'
+import Props from './Props'
 
 function App() {
   return (
     <div className='App'>
-      <UseStateHook />
-      <hr/>
-      <UseReducerHook />
+      <Props />
     </div>
   )
 }
