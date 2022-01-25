@@ -1,3 +1,7 @@
+import { createContext } from 'react'
+
+export const IndexContext = createContext()
+
 export const initState = {
     text: '-',
     count: 0

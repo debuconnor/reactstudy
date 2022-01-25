@@ -1,11 +1,11 @@
 import './App.css'
 import React from 'react'
-import UseContextHook from './UseContextHook'
+import ReducerUseContext from './ReducerUseContext'
 
 function App() {
   return (
     <div className='App'>
-      <UseContextHook />
+      <ReducerUseContext />
     </div>
   )
 }
