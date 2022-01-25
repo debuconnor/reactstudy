@@ -1,11 +1,11 @@
 import './App.css'
 import React from 'react'
-import Props from './Props'
+import UseContextHook from './UseContextHook'
 
 function App() {
   return (
     <div className='App'>
-      <Props />
+      <UseContextHook />
     </div>
   )
 }
