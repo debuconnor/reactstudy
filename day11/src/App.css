@@ -1,0 +1,8 @@
+.active{
+  background-color: yellow;
+  color: green;
+}
+
+.quiz{width: 400px; margin: auto;}
+.quiz img{width: 100%;}
+button{padding:10px; font-size: 20px;}
