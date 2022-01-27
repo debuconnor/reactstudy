@@ -1,30 +1,23 @@
 import './App.css'
 import React from 'react'
 import { NavLink, Route, Switch, } from 'react-router-dom'
-import Graphics from './Graphics'
-import Home from './Home'
+import Start from './Start'
+import Quiz from './Quiz'
 import NotFound from './NotFound'
-import Web from './Web'
+import Score from './Score'
 
 function App() {
   return (
     <div className='App'>
-      <h1>React Router Dom</h1>
-      <ul>
-        <li><NavLink to='/' exact>Home</NavLink></li>
-        <li><NavLink to='/web'>Web</NavLink></li>
-        <li><NavLink to='/graphic'>Graphics</NavLink></li>
-      </ul>
-      <hr />
       <Switch>
         <Route path='/' exact>
-          <Home />
+          <Start />
         </Route>
-        <Route path='/web'>
-          <Web />
+        <Route path='/quiz'>
+          <Quiz />
         </Route>
-        <Route path='/graphic/:subject' component={Graphics}>
-          {/* <Graphics /> */}
+        <Route path='/score' >
+          <Score />
         </Route>
         <Route>
           <NotFound />

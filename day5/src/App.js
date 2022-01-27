@@ -17,12 +17,19 @@ function App() {
       ...names, [name]:value
     });
   }
+  const clearNames = () => {
+    setNames({
+      username: '',
+      nickname: ''
+    })
+  }
+  
 
   return (
     <div className='App'>
       <input name="username" placeholder="username" onChange={onChange} value={username} ref={inputRef} />
       <input name="nickname" placeholder="nickname" onChange={onChange} value={nickname} />
-
+      <button onClick={clearNames}>Clear</button>
       <div>{username} ({nickname})</div>
     </div>
   )
