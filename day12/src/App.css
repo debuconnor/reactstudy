@@ -1,8 +1,31 @@
-.active{
-  background-color: yellow;
-  color: green;
+.header{
+  width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.quiz{width: 400px; margin: auto;}
-.quiz img{width: 100%;}
-button{padding:10px; font-size: 20px;}
+.menu a{
+  background: navy;
+  color: #fff;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.list{
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+li{
+  list-style: none;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
