@@ -1,0 +1,9 @@
+.logo{height: 50px;}
+.header{display: flex;
+align-items: center;
+margin-right: 10px;}
+header{display: flex;background: #000;}
+h1{color:#fff;
+font-size: 1.5rem;}
+.button{width: 50px;}
+.search{flex: 1;}
