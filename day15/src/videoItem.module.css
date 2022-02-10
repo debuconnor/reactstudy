@@ -1,0 +1,20 @@
+.container{
+    width: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.video{
+    display: flex;
+    align-items: center;
+    ;
+}
+
+.metadata{
+    width: 60%;
+}
+
+.thumbnail{
+    height: 100%;
+}
