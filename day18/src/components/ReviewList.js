@@ -1,33 +1,41 @@
 import React from 'react'
 import './reviewListItem.css'
-const formatDate = (value) => { 
-  const date=new Date(value)
-  return `${date.getFullYear()}.${date.getMonth()+1}.${date.getDate()}`
- }
+const formatDate = (value) => {
+  const date = new Date(value)
+  return `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`
+}
 
-function ReviewListItem({list}) {
-   return (
+function ReviewListItem({ item, onDelete }) {
+  const handleDeleteClick = () => {
+    onDelete(item.id)
+  }
+
+  return (
     <div>
-    <section className='reviewListItem'>
-      <img src={list.imgUrl} className='reviewListItem-img' alt={list.title}/>
-      <div>
-        <h2>{list.title}</h2>
-        <p>{list.rating}</p>
-        <p>{formatDate(list.createdAt)}</p>
-        <p>{list.content}</p>
-      </div>
-    </section>
+      <section className='reviewListItem'>
+        <img src={item.imgUrl} className='reviewListItem-img' alt={item.title} />
+        <div>
+          <h2>{item.title}</h2>
+          <p>{item.rating}</p>
+          <p>{formatDate(item.createdAt)}</p>
+          <p>{item.content}</p>
+          <button onClick={handleDeleteClick}>삭제</button>
+        </div>
+      </section>
     </div>
   )
 }
 
 // ----------------------------------
-function ReviewList({items}) {
+function ReviewList({ items, onDelete }) {
   console.log(items)
   return (
     <ul>{
-     items.map(list=>( <li><ReviewListItem list={list}/></li>)) 
-      }
+      items.map((item) => (
+        <li key={item.id}>
+          <ReviewListItem item={item} onDelete={onDelete} />
+        </li>))
+    }
     </ul>
   )
 }
