@@ -1,0 +1,24 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "content": "homework",
+      "checked": false
+    },
+    {
+      "id": 2,
+      "content": "meeting",
+      "checked": true
+    },
+    {
+      "id": 9208284,
+      "content": "cleaning room",
+      "checked": false
+    },
+    {
+      "id": 7663962,
+      "content": "shopping",
+      "checked": true
+    }
+  ]
+}

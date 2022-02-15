@@ -1,0 +1,28 @@
+.listbox{
+    padding-left: 0;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 70%;
+}
+
+.list{
+    border-top: 1px solid lightgray;
+    padding: 12px 0;
+    list-style: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.list:first-child{
+    border-top: none;
+}
+
+.list:hover{
+    background-color: rgb(253, 218, 212);
+}
+
+.list[data-checked="true"]{
+    background-color: lightgray;
+    color: gray;
+    text-decoration: line-through;
+}
