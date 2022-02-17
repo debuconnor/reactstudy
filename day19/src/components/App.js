@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import ReviewList from './ReviewList'
-import getReviews from '../fetch'
+import {getReviews} from '../fetch'
 import ReviewForm from './ReviewForm'
 import './App.css'
 

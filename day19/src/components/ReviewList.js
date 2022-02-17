@@ -1,5 +1,7 @@
 import React from 'react'
 import './reviewListItem.css'
+import Rating from './Rating'
+
 const formatDate = (value) => { 
   const date=new Date(value)
   return `${date.getFullYear()}.${date.getMonth()+1}.${date.getDate()}`
@@ -10,11 +12,12 @@ function ReviewListItem({item,onDelete}) {
 
    return (
     <div>
+ 
     <section className='reviewListItem'>
       <img src={item.imgUrl} className='reviewListItem-img' alt={item.title}/>
       <div>
         <h2>{item.title}</h2>
-        <p>{item.rating}</p>
+        <Rating value={item.rating}/>
         <p>{formatDate(item.createdAt)}</p>
         <p>{item.content}</p>
         <button onClick={handleDeleteClick}>삭제</button>
@@ -26,7 +29,6 @@ function ReviewListItem({item,onDelete}) {
 
 // ----------------------------------
 function ReviewList({items,onDelete}) {
-  console.log(items)
   return (
     <ul>{
      items.map((item)=>( 
